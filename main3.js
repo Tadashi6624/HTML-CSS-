@@ -20,6 +20,23 @@ function num_click(val){
     result.value = "0";
   }else if(result.value == "0" && val == "."){
     result.value = "0.";
+  }else if(val == "." && result.value.includes(".")){
+    // 既に小数点がある場合は、何もしない
+  }else if(result.value == "0"){
+    result.value = val;
+  }else{
+    result.value += val;
+  }
+}
+
+function num_click(val){
+  if(is_calc)  result.value = "0";
+  is_calc = false;  
+
+  if(result.value =="0" && val == "0"){
+    result.value = "0";
+  }else if(result.value == "0" && val == "."){
+    result.value = "0.";
   }else if(result.value == "0"){
     result.value = val;
   }else{
